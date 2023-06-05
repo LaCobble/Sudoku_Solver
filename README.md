@@ -10,7 +10,7 @@ This Java project aims to automatically solve a given Sudoku grid. The algorithm
 git clone https://github.com/LaCobble/Sudoku_Solver
 ```
 
-How It Works
+## How It Works
 The Sudoku class represents the Sudoku grid and contains the necessary methods for solving the puzzle. The algorithm uses a backtracking approach to explore all possible solutions until a valid solution is found.
 
 The tableauVide method initializes an empty Sudoku grid.
@@ -27,7 +27,7 @@ The solve method implements the backtracking algorithm to solve the Sudoku puzzl
 
 The Main class contains the main method where you can initialize a Sudoku object, set the initial grid, and call the solving algorithm.
 
-Example
+## Example
 Here's an example usage of the Sudoku solver:
 ```
 Sudoku s = new Sudoku();
@@ -45,12 +45,11 @@ System.out.println();
 ```
 ![image](https://user-images.githubusercontent.com/71151090/158797723-044c161f-1ada-405f-95b3-0529e0fb0a2f.png)
 
-Contributing
+## Contributing
 Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-License
+## License
 This project is licensed under the MIT License. For more information, see the LICENSE file.
-
 
 Feel free to customize the content, such as adding more information about the project or providing additional sections as needed.
 
