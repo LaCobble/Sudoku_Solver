@@ -1,5 +1,9 @@
 # Sudoku Solver
 
+<p align="center">
+<img src="https://github.com/LaCobble/Sudoku_Solver/assets/71151090/0bd83f99-2525-4a53-92dd-00bcb5446e54" width=40% height=40%>
+</p>
+
 This Java project aims to automatically solve a given Sudoku grid. The algorithm works for a normal (simple) Sudoku grid, but may require adjustments for more complex grids. This project was developed as a second-year assignment for a Computer Science program in a university.
 
 ## Usage
