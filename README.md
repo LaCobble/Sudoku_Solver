@@ -9,7 +9,16 @@ A Java program that solves a 9 x 9 Sudoku grid with a **backtracking** algorithm
 
 ## What it does
 
-`Main` loads a sample grid (`0` = empty cell), prints it, runs a few checks of the helper methods, solves the grid and prints the solution. Real output, shortened (the program's messages are in French):
+`Main` loads a sample grid (`0` = empty cell), prints it, runs a few checks of the helper methods, solves the grid and prints the solution.
+
+<p align="center">
+<img src="docs/images/sudoku-run.webp" width="360" alt="Terminal output: the starting grid with zeros for empty cells, then the solved grid">
+</p>
+
+*Real console output of `java -cp out Main`, blank lines and the helper checks (…) left out. "Affichage du tableau début / fin" means "initial / final grid".*
+
+<details>
+<summary>Same output as text</summary>
 
 ```text
 Affichage du tableau début
@@ -34,6 +43,8 @@ Affichage du tableau fin
 |2|4|1|9|3|5|8|6|7|
 |8|9|7|2|6|1|3|5|4|
 ```
+
+</details>
 
 To solve another grid, edit the values in `Sudoku.setTab()`.
 
