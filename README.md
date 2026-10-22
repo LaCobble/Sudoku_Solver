@@ -1,60 +1,76 @@
 # Sudoku Solver
 
-<p align="center">
-<img src="https://github.com/LaCobble/Sudoku_Solver/assets/71151090/0bd83f99-2525-4a53-92dd-00bcb5446e54" width=40% height=40%>
-</p>
+[![CI](https://github.com/LaCobble/Sudoku_Solver/actions/workflows/ci.yml/badge.svg)](https://github.com/LaCobble/Sudoku_Solver/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Java 17](https://img.shields.io/badge/Java-17-orange.svg)
+![Console](https://img.shields.io/badge/UI-console-lightgrey.svg)
 
-This Java project aims to automatically solve a given Sudoku grid. The algorithm works for a normal (simple) Sudoku grid, but may require adjustments for more complex grids. This project was developed as a second-year assignment for a Computer Science program in a university.
+A Java program that solves a 9 x 9 Sudoku grid with a **backtracking** algorithm and prints the result in the console.
 
-## Usage
+## What it does
 
-1. Clone the repository to your local machine:
+`Main` loads a sample grid (`0` = empty cell), prints it, runs a few checks of the helper methods, solves the grid and prints the solution.
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center" valign="top" width="50%"><img src="docs/images/sudoku-input.webp" alt="Input grid printed by the program, with 0 for empty cells"><br><sub>Input grid (0 = empty)</sub></td>
+    <td align="center" valign="top" width="50%"><img src="docs/images/sudoku-solved.webp" alt="Solved grid printed by the program"><br><sub>Solved grid</sub></td>
+  </tr>
+</table>
+
+*Rendered from the real console output of `java -cp out Main`. "Affichage du tableau début / fin" means "initial / final grid".*
+
+To solve another grid, edit the values in `Sudoku.setTab()`.
+
+## Requirements
+
+- A JDK (tested with JDK 17).
+
+## Build and run
 
 ```bash
-git clone https://github.com/LaCobble/Sudoku_Solver
+git clone https://github.com/LaCobble/Sudoku_Solver.git
+cd Sudoku_Solver
+javac -encoding UTF-8 -d out *.java
+java -cp out Main
 ```
 
-## How It Works
-The Sudoku class represents the Sudoku grid and contains the necessary methods for solving the puzzle. The algorithm uses a backtracking approach to explore all possible solutions until a valid solution is found.
+## Project structure
 
-The tableauVide method initializes an empty Sudoku grid.
-
-The setTab method sets the initial values of the Sudoku grid to solve. Modify this method to provide your own Sudoku grid.
-
-The affichTableau method displays the Sudoku grid on the console.
-
-The estPossible method checks if it's possible to place a value at a given position in the grid without breaking any Sudoku rules.
-
-The caseSuivante method returns the coordinates of the next empty cell in the grid.
-
-The solve method implements the backtracking algorithm to solve the Sudoku puzzle.
-
-The Main class contains the main method where you can initialize a Sudoku object, set the initial grid, and call the solving algorithm.
-
-## Example
-Here's an example usage of the Sudoku solver:
 ```
-Sudoku s = new Sudoku();
-s.setTab();
-System.out.println("Initial Sudoku grid:");
-s.affichTableau();
-System.out.println();
-
-s.solve(0, 0);
-System.out.println();
-
-System.out.println("Solved Sudoku grid:");
-s.affichTableau();
-System.out.println();
+├── Main.java    # Demo: prints the grid, tests the helpers, solves and prints the solution
+└── Sudoku.java  # The grid and the solver
 ```
-![image](https://user-images.githubusercontent.com/71151090/158797723-044c161f-1ada-405f-95b3-0529e0fb0a2f.png)
+
+Main methods of `Sudoku`:
+
+| Method | Role |
+| --- | --- |
+| `tableauVide()` | Initialises an empty grid. |
+| `setTab()` | Sets the grid to solve (edit it to try another puzzle). |
+| `affichTableau()` | Prints the grid. |
+| `estPossible(...)` | Checks whether a value can be placed in a cell without breaking the row, column and 3 x 3 box rules. |
+| `caseSuivante(...)` | Returns the coordinates of the next cell (row by row). |
+| `solve(row, col)` | Recursive backtracking solver. |
+
+## What it demonstrates
+
+- **Backtracking**: try a value in an empty cell, recurse to fill the rest of the grid, undo the choice when a dead end is reached.
+- Constraint checking on rows, columns and 3 x 3 boxes.
+- Recursive problem solving on a 2D array.
+
+The solver targets standard puzzles; very hard grids can take much longer, since there is no heuristic to choose the next cell.
+
+## Context
+
+Second-year Computer Science assignment at university (2022). Method names and messages are in French.
 
 ## Contributing
-Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+
+This is an archived learning project, but issues and pull requests are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
-This project is licensed under the MIT License. For more information, see the LICENSE file.
 
-Feel free to customize the content, such as adding more information about the project or providing additional sections as needed.
-
-If you have any further questions, please let me know!
+[MIT](LICENSE) © LaCobble
